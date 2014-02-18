@@ -1,4 +1,5 @@
 <?php   
+         echo "Anything?";
          $mysqli = new mysqli("localhost", "phpuser", "password", "timeclock");
 
          if (mysqli_connect_errno()) {
