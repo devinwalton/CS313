@@ -1,4 +1,4 @@
 $dbHost = "localhost"
-$dbUserName = user;
-$dbPassword = "t0rnad01"
+$dbUserName = phpuser;
+$dbPassword = "password"
 $dbDatabase = "timeclock"

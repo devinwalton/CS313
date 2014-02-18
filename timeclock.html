@@ -23,12 +23,10 @@
 
        <?php   
          require_once("timeclockAccsess.php");
+         $mysqli = new mysqli("localhost", "phpuser", "password", "timeclock");
 
-         $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbDatabase);
-
-         if ($conn->connect_errno) 
-         {
-            echo "Failed to connect to MySQL: " . $conn->connect_error;
+         if ($mysqli->connect_errno) {
+            echo "Failed to connect to MySQL: " . $mysqli->connect_errno;
          }
 
          ?>
@@ -43,8 +41,8 @@
          <select name="name">
       </div>
          <?php
-          $Students = $conn->query("SELECT StudentID, StudentName FROM Student");
-          $Job = $conn->query("SELECT JobID, JobName FROM Job");
+          $Students = $mysqli->query("SELECT StudentID, StudentName FROM Student");
+          $Job = $mysqli->query("SELECT JobID, JobName FROM Job");
          if($_GET["type"] == "JOB")
          {
             while ($row = $Job->fetch_assoc())
@@ -67,12 +65,12 @@
          {
             $queryString = "SELECT Hours, Minutes FROM TimeWorked "
                 . "WHERE JobID = $_GET["name"]";
-            $Time = $conn->query($queryString);
+            $Time = $mysqli->query($queryString);
          }else
          {
             $queryString = "SELECT Hours, Minutes FROM TimeWorked "
                 . "WHERE StudentID = $_GET["name"]";
-            $Time = $conn->query($queryString);
+            $Time = $mysqli->query($queryString);
          }
 
          $hoursWorked;
