@@ -56,8 +56,50 @@
          </select> Minutes
       </div>
       <?php
-          $string = "INSERT INTO TimeWorked(displayName, userName, password, email) 
-               VALUES ('$name', '$username', '$password', '$email')";
+          $JobExsists = $mysqli->query("SELECT JobID, JobName FROM Job");
+          $JobId = 0;
+          $JobName = $_GET["jobName"];
+          while($row = mysqli_fetch_array($JobExsists)){
+            if($row['JobName'] == $JobName)
+               $JobId = $row['JobId'];
+          }
+          if($JobId == 0) {
+            $string = "INSERT INTO Job
+               VALUES (NULL, $JobName)";
+          $mysqli->query($string);
+
+          $JobId = $mysqli->insert_id;
+          }
+          $string = "INSERT INTO Task
+               VALUES (NULL, $JobId,$_GET["task"])";
+          $mysqli->query($string);
+
+          $TaskId = $mysqli->insert_id;
+
+          $StudentExsists = $mysqli->query("SELECT StudentID, StudentName FROM Student");
+          $StudentId = 0;
+          $StudentName = $_GET["studentName"];
+          while($row = mysqli_fetch_array($StudentExsists)){
+            if($row['StudentName'] == $StudentName)
+               $StudentId = $row['StudentId'];
+          }
+          if($StudentId == 0) {
+            $string = "INSERT INTO Student
+               VALUES (NULL, $StudentName)";
+          $mysqli->query($string);
+
+          $StudentId = $mysqli->insert_id;
+          }
+
+          $string = "INSERT INTO TimeWorked
+               VALUES (NULL, $TaskId,$StudentId,$_GET["hours"],$_GET["minutes"])";
+          $mysqli->query($string);
+
+
+          $string = "INSERT INTO StudentOnTask
+               VALUES (NULL,$StudentId,$TaskId,)";
+          $mysqli->query($string);
+          
       ?>
       <div>
          Search by :
