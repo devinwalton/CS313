@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php   
+         $mysqli = new mysqli("localhost", "phpuser", "password", "timeclock");
+
+         if (mysqli_connect_errno()) {
+            echo "Failed to connect to MySQL: " . $mysqli->connect_errno;
+         }
+
+         ?>
 
 <html lang = "en">
 <head>
@@ -20,14 +27,7 @@
    </div>
    <div>
     <img src="BossArenaB.png" width="200" />
-       <?php   
-         $mysqli = new mysqli("localhost", "phpuser", "password", "timeclock");
-
-         if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . $mysqli->connect_errno;
-         }
-
-         ?>
+       
 
       <div>
          Log work done: <br />
