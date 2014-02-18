@@ -1,6 +1,3 @@
-<?php   
-         echo "Anything?";
-?>
          <?php  
          $mysqli = new mysqli("localhost", "phpuser", "password", "timeclock");
 
