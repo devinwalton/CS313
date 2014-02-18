@@ -101,60 +101,7 @@
           $mysqli->query($string);
           
       ?>
-      <div>
-         Search by :
-         <select name="type">
-            <option value = "JOB" selected="selected">Job</option>
-            <option value = "STUDENT">Student</option>
-         </select>
-         <br />
-         Which one would you like to know about?
-         <select name="name">
-      </div>
-         <?php
-          $Students = $mysqli->query("SELECT StudentID, StudentName FROM Student");
-          $Job = $mysqli->query("SELECT JobID, JobName FROM Job");
-         if($_GET["type"] == "JOB")
-         {
-            while ($row = $Job->fetch_assoc())
-            {
-               echo "<option value = \"" . $row["JobID"] . "\">" . $row["JobName"] . "</option>\n";
-            }
-
-         }else
-         {
-            while ($row = $Student->fetch_assoc())
-            {
-               echo "<option value = \"" . $row["StudentID"] . "\">" . $row["StudentName"] . "</option>\n";
-            }
-         }
-      ?>    
-      </select>
-      Total Hours Worked: 
-      <?php
-         if($_GET["type"] == "JOB")
-         {
-            $queryString = "SELECT Hours, Minutes FROM TimeWorked "
-                . "WHERE JobID = $_GET["name"]";
-            $Time = $mysqli->query($queryString);
-         }else
-         {
-            $queryString = "SELECT Hours, Minutes FROM TimeWorked "
-                . "WHERE StudentID = $_GET["name"]";
-            $Time = $mysqli->query($queryString);
-         }
-
-         $hoursWorked;
-         $minutesWorked;
-         while ($row = $Time->fetch_assoc())
-         {
-            $hoursWorked += $row["Hours"];
-            $minutesWorked += $row["Minutes"];
-         }
-         $hoursWorked += $minutesWorked/60;
-
-         echo $hoursWorked . "hours";
-      ?>
+      
     <img src="BossArenaG.png" width="200" align="right"/>
    </div>
 </body>
