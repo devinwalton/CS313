@@ -25,7 +25,7 @@
          require_once("timeclockAccsess.php");
          $mysqli = new mysqli("localhost", "phpuser", "password", "timeclock");
 
-         if ($mysqli->connect_errno) {
+         if (mysqli_connect_errno()) {
             echo "Failed to connect to MySQL: " . $mysqli->connect_errno;
          }
 
