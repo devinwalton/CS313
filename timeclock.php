@@ -1,12 +1,3 @@
-<?php   
-         $mysqli = new mysqli("localhost", "phpuser", "password", "timeclock");
-
-         if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . $mysqli->connect_errno;
-         }else
-         echo "Sucsess."
-
-         ?>
 <html lang = "en">
 <head>
    <meta charset = "utf-8" />
