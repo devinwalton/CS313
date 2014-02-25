@@ -3,8 +3,8 @@ angular.module('timeclock', [])
     .controller('AddTimeCtrl', function($scope, $http) {
     $scope.url = 'addTime.php'; // The url of our search
          
-  $scope.hoursWorked = [1,2,3,4,5,6,7,8];
-  $scope.minsWorked = [15,30,45];
+  $scope.hoursWorked = [0,1,2,3,4,5,6,7,8];
+  $scope.minsWorked = [0,15,30,45];
     // The function that will be executed on button click (ng-click="search()")
     $scope.addTime = function() {
          
