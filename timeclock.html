@@ -22,12 +22,12 @@
          </select>
          <button type="submit" ng-click="timeclock()">Submit</button> 
          <br />
-         <div ng-if="validSearch">
+         <div ng-show="validSearch">
          Which one would you like to know about?
          <select name="idSelector" ng-model="idSelector">
             <option ng-repeat="selection in selector" value="{{selection.value}}">{{selection.label}}</option>
          </select>
-         <button type="submit" ng-click="calculateHours();idUsed.id=idSelector">Submit</button> 
+         <button type="submit" ng-click="calculateHours();">Submit</button> 
          <br />
       Total Hours Worked: {{totalHours}}
       </div>
