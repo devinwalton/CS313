@@ -20,14 +20,14 @@
             <option value = "JOB" selected="selected">Job</option>
             <option value = "STUDENT">Student</option>
          </select>
-         <button type="submit" ng-click="timeclock()">Submit</button> 
+         <button type="submit" ng-click="timeclock()">Search</button> 
          <br />
          <div ng-show="validSearch">
          Which one would you like to know about?
          <select name="idSelector" ng-model="idSelector">
             <option ng-repeat="selection in selector" value="{{selection.value}}">{{selection.label}}</option>
          </select>
-         <button type="submit" ng-click="calculateHours();">Submit</button> 
+         <button type="submit" ng-click="calculateHours();">Calculate</button> 
          <br />
       Total Hours Worked: {{totalHours}}
       </div>
