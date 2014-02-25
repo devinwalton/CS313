@@ -15,15 +15,23 @@
 
          if($type == "JOB")
          {
-            $queryString = "SELECT Hours, Minutes FROM TimeWorked "
-                . "WHERE JobID = $id";
-            $Time = $mysqli->query($queryString);
+            if($id == 0) 
+            {
+               $queryString = "SELECT Hours, Minutes FROM TimeWorked";
+            }else
+               $queryString = "SELECT Hours, Minutes FROM TimeWorked "
+                . "JOIN Task WHERE JobID = $id";
          }else
          {
-            $queryString = "SELECT Hours, Minutes FROM TimeWorked "
+            if($id == 0) 
+            {
+               $queryString = "SELECT Hours, Minutes FROM TimeWorked";
+            }else
+               $queryString = "SELECT Hours, Minutes FROM TimeWorked "
                 . "WHERE StudentID = $id";
-            $Time = $mysqli->query($queryString);
          }
+         
+         $Time = $mysqli->query($queryString);
 
          $hoursWorked;
          $minutesWorked;
