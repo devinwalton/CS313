@@ -13,6 +13,7 @@ angular.module('timeclock', [])
             
             for(var i = 0; i < data.length; i++)
             {
+              console.log(data);
               if (i % 2 == 0)
                 $scope.values.push(data[i]);
               else
