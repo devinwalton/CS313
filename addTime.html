@@ -39,15 +39,13 @@
             <option ng-repeat="hour in hoursWorked" value="{{hour}}">{{hour}}</option>
          </select> Hours
          <select name="minutes" ng-model="min">
-            <option ng-repeat="min in minsWorked" value="{{min}}">{{min}}</option>
+            <option ng-repeat="min in minsWorked"  value="{{min}}">{{min}}</option>
          </select> Minutes
          <button type="submit" ng-click="addTime()">Submit</button> 
          </form>
       </div>
 
-      {{request}}
-      <br />
-      {{result}}
+      <h1>{{status}}</h1>
       
       
     <img src="BossArenaG.png" width="200" align="right"/>
