@@ -8,7 +8,7 @@ angular.module('timeclock', [])
           $scope.values = ["0"];
           $scope.labels = ["Everyone"];
           $scope.component;
-          $scope.selector;
+          $scope.selector = [];
          
         $http.post($scope.url, { "searchBy" : $scope.type}).
         success(function(data, status) {
