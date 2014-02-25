@@ -26,12 +26,14 @@
             $string = "INSERT INTO Job
                VALUES (NULL, $JobName)";
           $mysqli->query($string);
+          echo "Inserting: " . $string;
 
           $JobId = $mysqli->insert_id;
           }
           $string = "INSERT INTO Task
                VALUES (NULL, $JobId,$Task)";
           $mysqli->query($string);
+          echo "Inserting: " . $string;
 
           $TaskId = $mysqli->insert_id;
 
@@ -45,6 +47,7 @@
             $string = "INSERT INTO Student
                VALUES (NULL, $StudentName)";
           $mysqli->query($string);
+          echo "Inserting: " . $string;
 
           $StudentId = $mysqli->insert_id;
           }
@@ -52,9 +55,11 @@
           $string = "INSERT INTO TimeWorked
                VALUES (NULL, $TaskId,$StudentId,$Hour,$Min)";
           $mysqli->query($string);
+          echo "Inserting: " . $string;
 
 
           $string = "INSERT INTO StudentOnTask
                VALUES (NULL,$StudentId,$TaskId,)";
           $mysqli->query($string);
+          echo "Inserting: " . $string;
            
