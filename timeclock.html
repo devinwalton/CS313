@@ -24,7 +24,7 @@
          <br />
          <div ng-if="validSearch">
          Which one would you like to know about?
-         <select name="name" ng-model="idSelector">
+         <select name="idSelector" ng-model="idSelector">
             <option ng-repeat="selection in selector" value="{{selection.value}}">{{selection.label}}</option>
          </select>
          <button type="submit" ng-click="calculateHours()">Submit</button> 
