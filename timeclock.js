@@ -56,8 +56,8 @@ angular.module('timeclock', [])
                               }).
       success(function(data, status) {
         $scope.totalHours = data;
-      }
+      });
 
-    }
+    };
 
 });
