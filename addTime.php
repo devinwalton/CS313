@@ -11,5 +11,5 @@
          $data = file_get_contents("php://input");
          echo $data;
          $objData = json_decode($data);
-         echo "\n".$objData;
+         echo $objData;
           
