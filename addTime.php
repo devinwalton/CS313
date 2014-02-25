@@ -9,7 +9,7 @@
 
           echo "data: " . $data;
          $objData = json_decode($data);
-
+         var_dump($objData);
          $Hour =  $objData->hour;
          $Min = $objData->min;
          $StudentName = $objData->name;
@@ -25,7 +25,7 @@
           }
           if($JobId == 0) {
             $string = "INSERT INTO Job
-               VALUES (NULL, $Job)";
+               VALUES (NULL, \"$Job\")";
           $mysqli->query($string);
           echo "\nInserting: " . $string;
 
@@ -46,7 +46,7 @@
           }
           if($StudentId == 0) {
             $string = "INSERT INTO Student
-               VALUES (NULL, $StudentName)";
+               VALUES (NULL, \"$StudentName\")";
           $mysqli->query($string);
           echo "\nInserting: " . $string;
 
