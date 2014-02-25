@@ -7,9 +7,7 @@
 
          $data = file_get_contents("php://input");
 
-          echo "data: " . $data;
          $objData = json_decode($data);
-         var_dump($objData);
          $Hour =  $objData->hour;
          $Min = $objData->min;
          $StudentName = $objData->name;
@@ -20,6 +18,8 @@
          $JobExsists = $mysqli->query("SELECT JobID, JobName FROM Job");
           $JobId = 0;
           while($row = mysqli_fetch_array($JobExsists)){
+          echo "\nComparing: " . $Job;
+          echo "\To: " . $row['JobName'];
             if($row['JobName'] == $Job)
                $JobId = $row['JobId'];
           }
@@ -27,14 +27,14 @@
             $string = "INSERT INTO Job
                VALUES (NULL, \"$Job\")";
           $mysqli->query($string);
-          echo "\nInserting: " . $string;
+          // echo "\nInserting: " . $string;
 
           $JobId = $mysqli->insert_id;
           }
           $string = "INSERT INTO Task
-               VALUES (NULL, $JobId,$Task)";
+               VALUES (NULL, $JobId,\"$Task\")";
           $mysqli->query($string);
-          echo "\nInserting: " . $string;
+          // echo "\nInserting: " . $string;
 
           $TaskId = $mysqli->insert_id;
 
@@ -48,7 +48,7 @@
             $string = "INSERT INTO Student
                VALUES (NULL, \"$StudentName\")";
           $mysqli->query($string);
-          echo "\nInserting: " . $string;
+          // echo "\nInserting: " . $string;
 
           $StudentId = $mysqli->insert_id;
           }
@@ -56,11 +56,9 @@
           $string = "INSERT INTO TimeWorked
                VALUES (NULL, $TaskId,$StudentId,$Hour,$Min)";
           $mysqli->query($string);
-          echo "\nInserting: " . $string;
 
 
           $string = "INSERT INTO StudentOnTask
                VALUES (NULL,$StudentId,$TaskId,)";
           $mysqli->query($string);
-          echo "\nInserting: " . $string;
            
