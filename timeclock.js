@@ -50,7 +50,7 @@ angular.module('timeclock', [])
         });
     };
 
-    #scope.calculateHours = function() {
+    $scope.calculateHours = function() {
       $http.post($scope.url2, { "id" : $scope.idSelector, 
                                 "searchBy" : $scope.type
                               }).
