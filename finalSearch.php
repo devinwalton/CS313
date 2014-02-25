@@ -34,5 +34,5 @@
          }
          $hoursWorked += $minutesWorked/60;
 
-         echo $hoursWorked . "hours";
+         echo $hoursWorked . " Hours";
       ?>
