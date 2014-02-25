@@ -10,20 +10,20 @@
          $objData = json_decode($data);
          $type = $objData->searchBy;
 
-          $Students = $mysqli->query("SELECT StudentId, StudentName FROM Student");
+          $Student = $mysqli->query("SELECT StudentId, StudentName FROM Student");
           $Job = $mysqli->query("SELECT JobId, JobName FROM Job");
          if($type == "JOB")
          {
             while ($row = $Job->fetch_assoc())
             {
-               echo "<option value = \"" . $row["JobId"] . "\">" . $row["JobName"] . "</option>\n";
+               echo $row["JobId"] ."," . $row["JobName"]. ",";
             }
 
          }else
          {
             while ($row = $Student->fetch_assoc())
             {
-               echo "<option value = \"" . $row["StudentId"] . "\">" . $row["StudentName"] . "</option>\n";
+               echo $row["StudentId"] ."," . $row["StudentName"]. ",";
             }
          }
     ?>
