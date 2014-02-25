@@ -53,10 +53,10 @@ angular.module('timeclock', [])
 
     $scope.calculateHours = function() {
 
-      console.log($scope.selector.idSelector);
+      console.log($scope.idSelector.id);
       console.log($scope.type);
 
-      $http.post($scope.url2, { "id" : $scope.idSelector, 
+      $http.post($scope.url2, { "id" : $scope.idSelector.id, 
                                 "searchBy" : $scope.type
                               }).
       success(function(data, status) {
