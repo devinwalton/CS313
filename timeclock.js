@@ -10,7 +10,7 @@ angular.module('timeclock', [])
           $scope.labels = ["All"];
           $scope.component;
           $scope.selector = [];
-          $scope.idSelector = {"id":""};
+          $scope.idUsed = {"id":""};
          
         $http.post($scope.url, { "searchBy" : $scope.type}).
         success(function(data, status) {
