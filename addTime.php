@@ -13,14 +13,8 @@
          $StudentName = $objData->name;
          $Job = $objData->job;
          $Task = $objData->task;
-         if(is_null($Hour)||is_null($Min)||is_null($StudentName)||is_null($Job)||is_null($Task))
-         {
-            echo "Form Incomplete. Please fill in your data."
-         }
-         else
-         {
 
-            echo "Sucsess. Your time has been logged."
+
          $JobExsists = $mysqli->query("SELECT JobId, JobName FROM Job");
           $JobId = 0;
           while($row = mysqli_fetch_array($JobExsists)){
@@ -65,4 +59,4 @@
           $string = "INSERT INTO StudentOnTask
                VALUES (NULL,$StudentId,$TaskId,)";
           $mysqli->query($string);
-           ?> 
+           ?>
