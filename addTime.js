@@ -9,7 +9,7 @@ angular.module('timeclock', [])
     $scope.addTime = function() {
          
          $scope.request = [$scope.hour, $scope.min];
-        $http.post($scope.url, { "data" : $scope.request}).
+        $http.post($scope.url, { "hour" : $scope.hour, "min" : $scope.min}).
         success(function(data, status) {
             $scope.status = status;
             $scope.data = data;
