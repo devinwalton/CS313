@@ -19,7 +19,8 @@
           $JobId = 0;
           while($row = mysqli_fetch_array($JobExsists)){
           echo "\nComparing: " . $Job;
-          echo "\To: " . $row['JobName'];
+          echo " To: " . $row['JobName'] . "  ";
+          echo ($row['JobName'] == $Job);
             if($row['JobName'] == $Job)
                $JobId = $row['JobId'];
           }
