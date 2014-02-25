@@ -18,8 +18,8 @@
          {
             while ($row = $Job->fetch_assoc())
             {
-                $result[i++][$row["JobId"]];
-                $result[i++][$row["JobName"]];
+                $result[i++] = [$row["JobId"]];
+                $result[i++] = [$row["JobName"]];
             }
             echo $result;
 
