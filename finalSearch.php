@@ -21,7 +21,7 @@
             }else
             {
                $queryString = "SELECT Hours, Minutes FROM TimeWorked "
-                . "JOIN Task WHERE JobID = $id";
+                . "INNER JOIN Task WHERE JobID = $id";
             }
                
          }else
