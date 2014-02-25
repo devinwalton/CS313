@@ -18,7 +18,7 @@ angular.module('timeclock', [])
             {
               console.log(data);
               console.log($scope.component);
-              if (i % 2 == 0)
+              if (i % 2 == 0){}
               else
               {
                 if (j % 2 == 0)
