@@ -19,14 +19,12 @@ angular.module('timeclock', [])
                 $scope.labels.add(data[i]);
             }
           }
-            $scope.status = data;
             $scope.data = data;
             $scope.result = data; 
         })
         .
         error(function(data, status) {
-            $scope.data = data || "Request failed";
-            $scope.status = "Server Error";         
+            $scope.data = data || "Request failed";       
         });
     };
 });
