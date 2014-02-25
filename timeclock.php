@@ -19,13 +19,15 @@
                  $result[] = $row["JobId"];
                  $result[] = $row["JobName"];
             }
-            return $result;
+            echo var_dump($result);
 
          }else
          {
             while ($row = $Student->fetch_assoc())
             {
-               echo "a";
+               $result[] = $row["StudentId"];
+               $result[] = $row["StudentName"];
             }
+            echo var_dump($result);
          }
     ?>

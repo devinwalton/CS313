@@ -13,11 +13,13 @@ angular.module('timeclock', [])
             
             for(var i = 0; i < data.length; i++)
             {
+              $scope.components = data.split("=>");
               console.log(data);
+              console.log(components);
               if (i % 2 == 0)
-                $scope.values.push(data[i]);
+                $scope.values.push(components[i]);
               else
-                $scope.labels.push(data[i]);
+                $scope.labels.push(components[i]);
             }
           
             $scope.data = data;
