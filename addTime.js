@@ -7,7 +7,7 @@ angular.module('timeclock', [])
   $scope.minsWorked = [0,15,30,45];
     // The function that will be executed on button click (ng-click="search()")
     $scope.addTime = function() {
-        if(!scope.hour)
+        if(!$scope.hour)
         {
             scope.status = "Please fill out all of the form entries before submitting."
             return;
