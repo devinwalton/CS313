@@ -29,11 +29,11 @@
       <form name="addInfo">
          Log work done: <br />
          Student: 
-         <input type="text" name ="studentName"> <br />
+         <input type="text" ng-model ="studentName"> <br />
          Job: 
-         <input type="text" name ="jobName"> <br />
+         <input type="text" ng-model ="jobName"> <br />
          What was accomplished: 
-         <input type="textarea" name ="task"> <br />
+         <input type="textarea" ng-model ="task"> <br />
          Enter Time Worked
          <select name="hours" ng-model="hour">
             <option ng-repeat="hour in hoursWorked" value="{{hour}}">{{hour}}</option>
