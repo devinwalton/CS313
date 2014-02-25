@@ -1,4 +1,3 @@
-
 angular.module('timeclock', [])
     .controller('AddTimeCtrl', function($scope, $http) {
     $scope.url = 'addTime.php'; // The url of our search
@@ -9,7 +8,7 @@ angular.module('timeclock', [])
     $scope.addTime = function() {
         if(!$scope.hour)
         {
-            scope.status = "Please fill out all of the form entries before submitting."
+            $scope.status = "Please fill out all of the form entries before submitting."
             return;
         }
          
