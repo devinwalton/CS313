@@ -1,6 +1,6 @@
 
 angular.module('timeclock', [])
-    .controller('AddTimeCtrl' function($scope, $http) {
+    .controller('AddTimeCtrl', function($scope, $http) {
     $scope.url = 'addTime.php'; // The url of our search
          
   $scope.hoursWorked = [0,1,2,3,4,5,6,7,8];
