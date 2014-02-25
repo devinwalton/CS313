@@ -12,14 +12,13 @@
 
           $Student = $mysqli->query("SELECT StudentId, StudentName FROM Student");
           $Job = $mysqli->query("SELECT JobId, JobName FROM Job");
-          $result = "";
-          $i = 0;
+          $result;
          if($type == "JOB")
          {
             while ($row = $Job->fetch_assoc())
             {
-                // $result[i++] = $row["JobId"];
-                // $result[i++] = $row["JobName"];
+                 $result = $row["JobId"];
+                 $result = $row["JobName"];
             }
             echo $result;
 
