@@ -26,6 +26,7 @@
 
 
       <div>
+      <form name="addInfo">
          Log work done: <br />
          Student: 
          <input type="text" name ="studentName"> <br />
@@ -40,6 +41,8 @@
          <select name="minutes" ng-model="min">
             <option ng-repeat="min in minsWorked" value="{{min}}">{{min}}</option>
          </select> Minutes
+         <button type="submit" ng-click="addTime()">Submit</button>
+         </form>
       </div>
 
       {{request}}
