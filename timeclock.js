@@ -7,13 +7,14 @@ angular.module('timeclock', [])
     $scope.timeclock = function() {
           $scope.values = ["0"];
           $scope.labels = ["Everyone"];
+          $scope.component;
          
         $http.post($scope.url, { "searchBy" : $scope.type}).
         success(function(data, status) {
             
             for(var i = 0; i < data.length; i++)
             {
-              $scope.components = data.split("=>");
+              $scope.component = data.split("=>");
               console.log(data);
               console.log(components);
               if (i % 2 == 0)
