@@ -1,7 +1,7 @@
 angular.module('timeclock', [])
     .controller('TimeclockCtrl', function($scope, $http) {
     $scope.url = 'timeclock.php'; // The url of our search
-    $scope.valid = false;
+    $scope.validSearch = false;
   
     // The function that will be executed on button click (ng-click="search()")
     $scope.timeclock = function() {
@@ -12,6 +12,7 @@ angular.module('timeclock', [])
          
         $http.post($scope.url, { "searchBy" : $scope.type}).
         success(function(data, status) {
+          $scope.validSearch = true;
           var j = 0;
             
             $scope.component = data.split("\"");
