@@ -8,7 +8,7 @@
          $data = file_get_contents("php://input");
 
          $objData = json_decode($data);
-         $type = objData->type
+         $type = objData->searchBy;
 
           $Students = $mysqli->query("SELECT StudentId, StudentName FROM Student");
           $Job = $mysqli->query("SELECT JobId, JobName FROM Job");
