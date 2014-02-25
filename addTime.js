@@ -25,4 +25,4 @@ angular.module('timeclock', [])
             $scope.status = status;         
         });
     };
-}); 
+});
