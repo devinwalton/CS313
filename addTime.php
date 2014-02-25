@@ -15,12 +15,9 @@
          $Task = $objData->task;
 
 
-         $JobExsists = $mysqli->query("SELECT JobID, JobName FROM Job");
+         $JobExsists = $mysqli->query("SELECT JobId, JobName FROM Job");
           $JobId = 0;
           while($row = mysqli_fetch_array($JobExsists)){
-          echo "\nComparing: " . $Job;
-          echo " To: " . $row['JobName'] . "  ";
-          echo ($row['JobName'] == $Job);
             if($row['JobName'] == $Job)
                $JobId = $row['JobId'];
           }
@@ -39,7 +36,7 @@
 
           $TaskId = $mysqli->insert_id;
 
-          $StudentExsists = $mysqli->query("SELECT StudentID, StudentName FROM Student");
+          $StudentExsists = $mysqli->query("SELECT StudentId, StudentName FROM Student");
           $StudentId = 0;
           while($row = mysqli_fetch_array($StudentExsists)){
             if($row['StudentName'] == $StudentName)
