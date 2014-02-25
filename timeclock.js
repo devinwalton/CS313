@@ -10,8 +10,6 @@ angular.module('timeclock', [])
          
         $http.post($scope.url, { "searchBy" : $scope.type}).
         success(function(data, status) {
-          if(Array.isArray(data))
-          {
             i = 0;
             foreach (string element in data)
             {
