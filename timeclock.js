@@ -10,7 +10,6 @@ angular.module('timeclock', [])
           $scope.labels = ["All"];
           $scope.component;
           $scope.selector = [];
-          $scope.idUsed = {"id":""};
          
         $http.post($scope.url, { "searchBy" : $scope.type}).
         success(function(data, status) {
@@ -53,10 +52,10 @@ angular.module('timeclock', [])
 
     $scope.calculateHours = function() {
 
-      console.log($scope.idSelector.id);
+      console.log($scope.idSelector);
       console.log($scope.type);
 
-      $http.post($scope.url2, { "id" : $scope.idSelector.id, 
+      $http.post($scope.url2, { "id" : $scope.idSelector, 
                                 "searchBy" : $scope.type
                               }).
       success(function(data, status) {
