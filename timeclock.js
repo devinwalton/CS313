@@ -13,7 +13,7 @@ angular.module('timeclock', [])
             
             for(var i = 0; i < data.length; i++)
             {
-              if (i % 2 = 0)
+              if (i % 2 == 0)
                 $scope.values.add(data[i]);
               else
                 $scope.labels.add(data[i]);
