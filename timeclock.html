@@ -13,7 +13,6 @@
    <div>         
       <p class="head roundedBorder" align="center">Boss Arena Manager<p>
    </div>
-   <div>
     <img src="BossArenaB.png" width="200" />
       <div>
          Search by :
@@ -23,14 +22,15 @@
          </select>
          <button type="submit" ng-click="timeclock()">Submit</button> 
          <br />
+         <div ng-if="{{valid}}">
          Which one would you like to know about?
-         {{values}} {{labels}}
          <select name="name">
-      </div>
-        
-      </select>
+            <option ng-repeat="selection in selector" value="{{selection.value}}">{{selection.label}}</option>
+         </select>
       Total Hours Worked: 
+      </div>
     <img src="BossArenaG.png" width="200" align="right"/>
+    
    </div>
    </div>
 </body>
