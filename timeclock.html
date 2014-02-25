@@ -27,6 +27,7 @@
          <select name="name" ng-model="idSelector">
             <option ng-repeat="selection in selector" value="{{selection.value}}">{{selection.label}}</option>
          </select>
+         <button type="submit" ng-click="calculateHours()">Submit</button> 
          <br />
       Total Hours Worked: {{totalHours}}
       </div>
