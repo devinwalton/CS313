@@ -8,7 +8,18 @@ angular.module('timeclock', [])
          
         $http.post($scope.url, { "searchBy" : $scope.type}).
         success(function(data, status) {
-            $scope.status = "You have successfully logged your time.";
+          if(Array.isArray(data))
+          {
+            i = 0;
+            foreach (string element in data)
+            {
+              if(i++ % 2 = 0)
+                $scope.values.add(element);
+              else
+                $scope.labels.add(element);
+            }
+          }
+            $scope.status = data;
             $scope.data = data;
             $scope.result = data; 
         })
