@@ -5,6 +5,7 @@
    <meta charset = "utf-8" />
    <link rel="stylesheet" type="text/css" href="main.css"></link>  
    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+   <script src="addTime.js"></script>
    <title>Boss Arena Manager</title>
 </head>
 <body>     
@@ -21,11 +22,7 @@
    </div>
    <div>
     <img src="BossArenaB.png" width="200" />
-<script type="text/javascript">
-  $scope.hoursWorked = [0,1,2,3,4,5,6,7,8];
-  $scope.minsWorked = [0,15,30,45];
-  $scope.working = "hi";
-</script>
+
 
       <div>
          {{working}}
@@ -37,10 +34,10 @@
          What was accomplished: 
          <input type="textarea" name ="task"> <br />
          Enter Time Worked
-         <select name="hours">
+         <select name="hours" ng-model="hour">
             <option ng-repeat="hour in hoursWorked" value="{{hour}}">{{hour}}</option>
          </select> Hours
-         <select name="minutes">
+         <select name="minutes" ng-model="min">
             <option ng-repeat="min in minsWorked" value="{{min}}">{{min}}</option>
          </select> Minutes
       </div>
