@@ -12,28 +12,29 @@
          $Hour =  $objData->hour;
          $Min = $objData->min;
          $StudentName = $objData->name;
-         $JobName = $objData->job;
+         $Job = $objData->job;
          $Task = $objData->task;
+          echo "Job: " . $Job;
 
 
          $JobExsists = $mysqli->query("SELECT JobID, JobName FROM Job");
           $JobId = 0;
           while($row = mysqli_fetch_array($JobExsists)){
-            if($row['JobName'] == $JobName)
+            if($row['JobName'] == $Job)
                $JobId = $row['JobId'];
           }
           if($JobId == 0) {
             $string = "INSERT INTO Job
-               VALUES (NULL, $JobName)";
+               VALUES (NULL, $Job)";
           $mysqli->query($string);
-          echo "Inserting: " . $string;
+          echo "\nInserting: " . $string;
 
           $JobId = $mysqli->insert_id;
           }
           $string = "INSERT INTO Task
                VALUES (NULL, $JobId,$Task)";
           $mysqli->query($string);
-          echo "Inserting: " . $string;
+          echo "\nInserting: " . $string;
 
           $TaskId = $mysqli->insert_id;
 
@@ -47,7 +48,7 @@
             $string = "INSERT INTO Student
                VALUES (NULL, $StudentName)";
           $mysqli->query($string);
-          echo "Inserting: " . $string;
+          echo "\nInserting: " . $string;
 
           $StudentId = $mysqli->insert_id;
           }
@@ -55,11 +56,11 @@
           $string = "INSERT INTO TimeWorked
                VALUES (NULL, $TaskId,$StudentId,$Hour,$Min)";
           $mysqli->query($string);
-          echo "Inserting: " . $string;
+          echo "\nInserting: " . $string;
 
 
           $string = "INSERT INTO StudentOnTask
                VALUES (NULL,$StudentId,$TaskId,)";
           $mysqli->query($string);
-          echo "Inserting: " . $string;
+          echo "\nInserting: " . $string;
            
