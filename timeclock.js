@@ -16,11 +16,11 @@ angular.module('timeclock', [])
             {
               $scope.component = data.split("=");
               console.log(data);
-              console.log(component);
+              console.log($scope.component);
               if (i % 2 == 0)
-                $scope.values.push(component[i]);
+                $scope.values.push($scope.component[i]);
               else
-                $scope.labels.push(component[i]);
+                $scope.labels.push($scope.component[i]);
             }
           
             $scope.data = data;
