@@ -59,4 +59,5 @@
           $string = "INSERT INTO StudentOnTask
                VALUES (NULL,$StudentId,$TaskId,)";
           $mysqli->query($string);
+          echo "YOu have sucessfully logged your time."
            ?>

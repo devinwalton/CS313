@@ -8,7 +8,6 @@ angular.module('timeclock', [])
     // The function that will be executed on button click (ng-click="search()")
     $scope.addTime = function() {
          
-         $scope.request = [$scope.hour, $scope.min];
         $http.post($scope.url, { "hour" : $scope.hour, 
         							"min" : $scope.min,
         							"name" : $scope.studentName,
