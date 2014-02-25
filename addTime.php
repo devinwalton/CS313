@@ -59,4 +59,4 @@
           $string = "INSERT INTO StudentOnTask
                VALUES (NULL,$StudentId,$TaskId,)";
           $mysqli->query($string);
-           
+           ?>
