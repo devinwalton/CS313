@@ -39,8 +39,7 @@
             <option ng-repeat="hour in hoursWorked" ng-selecded="{{hour}}=0" value="{{hour}}">{{hour}}</option>
          </select> Hours
          <select name="minutes" ng-model="min">
-            <option  value="0" selected="selected">0</option>
-            <option ng-repeat="min in minsWorked"  ng-selecded="{{hour}}=0" value="{{min}}">{{min}}</option>
+            <option ng-repeat="min in minsWorked"  ng-selecded="{{min}}=0" value="{{min}}">{{min}}</option>
          </select> Minutes
          <button type="submit" ng-click="addTime()">Submit</button>
          </form>
