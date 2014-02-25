@@ -22,7 +22,7 @@ angular.module('timeclock', [])
         .
         error(function(data, status) {
             $scope.data = data || "Request failed";
-            $scope.status = "There was an error in logging your status. Check the fields again.";         
+            $scope.status = status;         
         });
     };
 });
