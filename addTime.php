@@ -11,5 +11,6 @@
          $data = file_get_contents("php://input");
          echo $data;
          $objData = json_decode($data);
-         echo $objData->data;
+         $hour =  $objData->hour;
+         echo "Hours Worked: ". $hour;
           
