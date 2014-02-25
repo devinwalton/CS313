@@ -1,13 +1,14 @@
          <?php  
-         $mysqli = new mysqli("localhost", "phpuser", "password", "timeclock");
+         $mysqli = new mysqli("localhost", "root", "", "timeclock");
 
          if (mysqli_connect_errno()) {
             echo "Failed to connect to MySQL: " . $mysqli->connect_errno;
          }
 
          ?>
+<script src="index.html"></script>
 
-<html lang = "en">
+<html lang = "en" ng-app="timeclock">
 <head>
    <meta charset = "utf-8" />
    <link rel="stylesheet" type="text/css" href="main.css"></link>  
@@ -31,6 +32,7 @@
 
       <div>
          Log work done: <br />
+         <form name="register" method="post" action="signUp.php">
          Student: 
          <input type="text" name ="studentName"> <br />
          Job: 
@@ -54,6 +56,7 @@
             <option value="30">30</option>
             <option value="45">45</option>
          </select> Minutes
+         </form>
       </div>
       <?php
           $JobExsists = $mysqli->query("SELECT JobID, JobName FROM Job");
