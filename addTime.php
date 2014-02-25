@@ -7,6 +7,7 @@
 
          $data = file_get_contents("php://input");
 
+          echo "data: " . $data;
          $objData = json_decode($data);
 
          $Hour =  $objData->hour;
@@ -14,7 +15,6 @@
          $StudentName = $objData->name;
          $Job = $objData->job;
          $Task = $objData->task;
-          echo "Job: " . $Job;
 
 
          $JobExsists = $mysqli->query("SELECT JobID, JobName FROM Job");

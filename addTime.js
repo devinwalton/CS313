@@ -11,9 +11,9 @@ angular.module('timeclock', [])
          $scope.request = [$scope.hour, $scope.min];
         $http.post($scope.url, { "hour" : $scope.hour, 
         							"min" : $scope.min,
-        							"Name" : $scope.studentName,
-        	 						"Job" : $scope.jobName, 
-        	 						"Task" : $scope.task}).
+        							"name" : $scope.studentName.value,
+        	 						"job" : $scope.jobName, 
+        	 						"task" : $scope.task}).
         success(function(data, status) {
             $scope.status = status;
             $scope.data = data;
