@@ -19,7 +19,7 @@
                  $result[] = $row["JobId"];
                  $result[] = $row["JobName"];
             }
-            echo $result;
+            echo var_dump($result);
 
          }else
          {
