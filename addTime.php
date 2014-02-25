@@ -6,7 +6,7 @@
          }
 
          $data = file_get_contents("php://input");
-
+         echo $data;
          $objData = json_decode($data);
          $Hour =  $objData->hour;
          $Min = $objData->min;
