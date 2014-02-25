@@ -5,11 +5,11 @@ angular.module('timeclock', [])
   
     // The function that will be executed on button click (ng-click="search()")
     $scope.timeclock = function() {
+          $scope.values = [0,"0"];
+          $scope.labels = [0,"Everyone"];
          
         $http.post($scope.url, { "searchBy" : $scope.type}).
         success(function(data, status) {
-          $scope.values;
-          $scope.labels;
           if(Array.isArray(data))
           {
             i = 0;
