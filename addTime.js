@@ -14,9 +14,9 @@ angular.module('timeclock', [])
         	 						"job" : $scope.jobName, 
         	 						"task" : $scope.task}).
         success(function(data, status) {
-            $scope.status = data;
+            $scope.status = "You have successfully logged your time." ;
             $scope.data = data;
-            $scope.result = data; // Show result from server in our <pre></pre> element
+            $scope.result = data; 
         })
         .
         error(function(data, status) {
