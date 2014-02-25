@@ -27,7 +27,7 @@
          {
             while ($row = $Student->fetch_assoc())
             {
-               echo $row["StudentId"] ."," . $row["StudentName"]. ",";
+               echo $row["StudentName"];
             }
          }
     ?>
