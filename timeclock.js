@@ -33,9 +33,12 @@ angular.module('timeclock', [])
 
             for(var i = 0; i < $scope.values.length; i++)
             {
-              $scope.selector.push( [ "label" : $scope.labels[i],
-                                    "value" : $scope.values[i]]
-                );
+                var selction = {
+                               label: $scope.labels[i],
+                               value: $scope.values[i]
+                            };
+
+              $scope.selector.push(selection);
             }
           
             $scope.data = data;
