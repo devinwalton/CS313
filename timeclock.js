@@ -38,7 +38,7 @@ angular.module('timeclock', [])
                                value: $scope.values[i]
                             };
 
-              $scope.selector.push(selection);
+              $scope.selector.push(selction);
             }
           
             $scope.data = data;
