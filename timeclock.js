@@ -19,12 +19,6 @@ angular.module('timeclock', [])
                 $scope.labels.add(data[i]);
             }
           }
-            $scope.data = data;
-            $scope.result = data; 
-        })
-        .
-        error(function(data, status) {
-            $scope.data = data || "Request failed";       
         });
     };
 });
