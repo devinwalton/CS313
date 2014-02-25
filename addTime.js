@@ -3,8 +3,8 @@ angular.module('timeclock', [])
     .controller('AddTimeCtrl', function($scope, $http) {
     $scope.url = 'addTime.php'; // The url of our search
          
-  $scope.hoursWorked = [0,1,2,3,4,5,6,7,8];
-  $scope.minsWorked = [0,15,30,45];
+  $scope.hoursWorked = [1,2,3,4,5,6,7,8];
+  $scope.minsWorked = [15,30,45];
     // The function that will be executed on button click (ng-click="search()")
     $scope.addTime = function() {
          
@@ -15,14 +15,14 @@ angular.module('timeclock', [])
         	 						"job" : $scope.jobName, 
         	 						"task" : $scope.task}).
         success(function(data, status) {
-            $scope.status = status;
+            $scope.status = data;
             $scope.data = data;
             $scope.result = data; // Show result from server in our <pre></pre> element
         })
         .
         error(function(data, status) {
             $scope.data = data || "Request failed";
-            $scope.status = status;         
+            $scope.status = "There was an error in logging your status. Check the fields again.";         
         });
     };
 });
