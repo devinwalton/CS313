@@ -13,11 +13,11 @@
          $StudentName = $objData->name;
          $Job = $objData->job;
          $Task = $objData->task;
-         if(is_null($Hour)||is_null($Min)||is_null($StudentName)||is_null($Job)||is_null($Task))
+        // if(is_null($Hour)||is_null($Min)||is_null($StudentName)||is_null($Job)||is_null($Task))
          {
             echo "Form Incomplete. Please fill in your data."
          }
-         else
+       //  else
          {
 
             echo "Sucsess. Your time has been logged."
