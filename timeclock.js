@@ -10,13 +10,13 @@ angular.module('timeclock', [])
          
         $http.post($scope.url, { "searchBy" : $scope.type}).
         success(function(data, status) {
-            i = 0;
-            foreach (var element in data)
+            
+            for(var i = 0; i < data.length; i++)
             {
-              if(i++ % 2 = 0)
-                $scope.values.add(element);
+              if (i % 2 = 0)
+                $scope.values.add(data[i]);
               else
-                $scope.labels.add(element);
+                $scope.labels.add(data[i]);
             }
           }
             $scope.status = data;
