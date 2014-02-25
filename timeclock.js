@@ -13,9 +13,9 @@ angular.module('timeclock', [])
         success(function(data, status) {
           var j = 0;
             
-            for(var i = 0; i < data.length; i++)
+            $scope.component = data.split("\"");
+            for(var i = 0; i < $scope.component.length; i++)
             {
-              $scope.component = data.split("\"");
               console.log(data);
               console.log($scope.component);
               if (i % 2 == 0)
