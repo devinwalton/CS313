@@ -1,12 +1,13 @@
 angular.module('timeclock', [])
     .controller('TimeclockCtrl', function($scope, $http) {
     $scope.url = 'timeclock.php'; // The url of our search
+    $scope.url2 = 'finalSearch.php'; // The url of our search
     $scope.validSearch = false;
   
     // The function that will be executed on button click (ng-click="search()")
     $scope.timeclock = function() {
           $scope.values = ["0"];
-          $scope.labels = ["Everyone"];
+          $scope.labels = ["All"];
           $scope.component;
           $scope.selector = [];
          
@@ -48,4 +49,15 @@ angular.module('timeclock', [])
             $scope.data = data || "Request failed";       
         });
     };
+
+    #scope.calculateHours = function() {
+      $http.post($scope.url2, { "id" : $scope.idSelector, 
+                                "searchBy" : $scope.type
+                              }).
+      success(function(data, status) {
+        $scope.totalHours = data;
+      }
+
+    }
+
 });
